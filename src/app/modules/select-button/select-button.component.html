@@ -1,3 +1,11 @@
-<p>
-  select-button works!
-</p>
+<div class="uk-button-group">
+  <button *ngFor="let option of options; let i = index" class="uk-button uk-button-default uk-button-small" [ngClass]="{'uk-button-primary':isSelected(option), 'uk-button-disabled':disabled}"
+    (click)="onItemClick($event,option,cbox,i)" [attr.title]="option.title">
+    <span [ngClass]="['ui-clickable', 'ui-button-icon-left']" [class]="option.icon" *ngIf="option.icon"></span>
+    <span class="ui-button-text ui-clickable">{{option.label}}</span>
+    <div class="uk-hidden">
+      <input #cbox type="checkbox" [checked]="isSelected(option)" (focus)="onFocus($event)" (blur)="onBlur($event)" [attr.tabindex]="tabindex"
+        [attr.disabled]="disabled">
+    </div>
+  </button>
+</div>

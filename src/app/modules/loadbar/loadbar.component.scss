@@ -1,0 +1,21 @@
+@import '../../../../node_modules/uikit/src/scss/variables-theme.scss';
+@import '../../../mixins.scss';
+@keyframes rainbow {
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 200%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+.progressbar {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(124deg, $alert-primary-background, lighten($alert-primary-background, 20%), $global-warning-background, $alert-warning-background, $global-success-background, lighten($global-primary-background, 20%), $global-primary-background, lighten($global-danger-background, 30%), lighten($global-danger-background, 30%));
+  background-size: 900% 900%;
+  animation: rainbow 9s ease infinite;
+}

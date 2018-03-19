@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+// 1. set uikit params
+$global-link-color: #DA7D02;
+$base-heading-font-family: 'Roboto';
+$navbar-nav-item-font-family: 'Work Sans';
+// 2. Import default variables and available mixins.
+@import "../node_modules/uikit/src/scss/variables-theme.scss";
+@import "./mixins.scss";
+// 3. Your custom mixin overwrites.
+@mixin hook-card() {
+  color: #000;
+}
+
+@mixin hook-navbar-sticky() {
+  box-shadow: $navbar-dropdown-box-shadow;
+}
+
+// 4. Import UIkit.
+@import "../node_modules/uikit/src/scss/uikit-theme.scss";
+@import "./uikit.scss";

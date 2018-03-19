@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
-  selector: 'ui-save-button',
-  templateUrl: './save-button.component.html',
-  styleUrls: ['./save-button.component.scss']
+    selector: 'ui-save-button',
+    templateUrl: './save-button.component.html',
+    styleUrls: ['./save-button.component.scss']
 })
-export class SaveButtonComponent implements OnInit {
+export class SaveButtonComponent {
 
-  constructor() { }
+    @Input() label: string;
+    @Input() disabled: boolean;
+    @Output() save = new EventEmitter<void>();
 
-  ngOnInit() {
-  }
+    onClick() {
+        if (this.save) {
+            this.save.emit();
+        }
 
+    }
 }
