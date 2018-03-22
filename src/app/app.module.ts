@@ -9,6 +9,7 @@ import { DeleteButtonModule } from './modules/delete-button/delete-button.module
 import { LoadbarModule } from './modules/loadbar/loadbar.module';
 import { SaveButtonModule } from './modules/save-button/save-button.module';
 import { SelectButtonModule } from './modules/select-button/select-button.module';
+import { ButtonModule } from './modules/button/button.module';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import { SelectButtonModule } from './modules/select-button/select-button.module
     ],
     imports: [
         BrowserModule,
+        ButtonModule,
         CheckboxModule,
         CloseButtonModule,
         DeleteButtonModule,

@@ -11,7 +11,8 @@ export const CHECKBOX_VALUE_ACCESSOR: any = {
 @Component({
     selector: 'ui-checkbox',
     templateUrl: './checkbox.component.html',
-    styleUrls: ['./checkbox.component.scss']
+    styleUrls: ['./checkbox.component.scss'],
+    providers: [CHECKBOX_VALUE_ACCESSOR]
 })
 export class CheckboxComponent implements ControlValueAccessor {
 

@@ -1,4 +1,104 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,700|Work+Sans:500,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+.wrap {
+  width: 100%;
+  max-width: 900px;
+  margin: 4em auto;
+  font-family: Raleway, Arial, sans-serif;
+  padding: 1em 2em;
+}
+
+a.btn,
+.btn {
+  margin-right: 1em;
+  /* remove this while use*/
+  margin-bottom: 1em;
+  /* remove this while use*/
+  display: inline-block;
+  outline: none;
+  *zoom: 1;
+  text-align: center;
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: 300;
+  letter-spacing: 1px;
+  vertical-align: middle;
+  border: 1px solid;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.01);
+}
+
+/* Radius */
+
+.btn-radius {
+  border-radius: 3px;
+}
+
+/* Sizes */
+
+.btn-small {
+  font-size: 0.8125em;
+  padding: 0.4125em 1.25em;
+}
+
+.btn-medium {
+  font-size: 0.9375em;
+  padding: 0.5375em 1.375em;
+}
+
+.btn-large {
+  font-size: 1.0625em;
+  padding: 0.5625em 1.5em;
+}
+
+/* Colors */
+
+$success-color:#3CB371;
+$info-color: #4682B4;
+$warning-color:#FF8C00;
+$error-color:#B22222;
+$muted-color: #808080;
+$colors: ( primary: $button-primary-background, primary-hover: $button-primary-hover-background, primary-active: $button-primary-active-background, secondary: $button-secondary-background, secondary-hover: $button-secondary-hover-background, secondary-active: $button-secondary-active-background, danger: $button-danger-background, danger-hover: $button-danger-hover-background, danger-active: $button-danger-active-background, success: $success-color, success-hover: darken( $success-color, 5%), success-active: darken( $success-color, 10%), info: $info-color, info-hover: darken( $info-color, 5%), info-active: darken( $info-color, 10%), warning: $warning-color, warning-hover: darken( $warning-color, 5%), warning-active: darken( $warning-color, 10%), error: $error-color, error-hover: darken( $error-color, 5%), error-active: darken( $error-color, 10%), default: $muted-color, default-hover: darken( $muted-color, 5%), default-active: darken( $muted-color, 10%), );
+$button-muted-background:#808080;
+$button-muted-hover-background: darken($button-muted-background, 5%) !default;
+$button-muted-hover-color: $global-inverse-color !default;
+$button-muted-active-background: darken($button-muted-background, 10%) !default;
+$button-muted-active-color: $global-inverse-color !default;
+@each $color in primary,
+secondary,
+danger,
+default,
+success,
+info,
+warning,
+error {
+  .uk-button-ghost {
+    &.uk-button-#{$color} {
+      background-color: transparent;
+      border: 1px solid map-get($colors, $color);
+      color: map-get($colors, $color);
+      &:hover,
+      &:focus {
+        background-color: map-get($colors, $color#{-hover});
+        color: $global-inverse-color;
+      }
+      &:active,
+      &.uk-active {
+        background-color: map-get($colors, $color#{-active});
+        color: $global-inverse-color;
+      }
+    }
+  }
+}
+
+.uk-button {
+  .uk-icon {
+    margin-left: -5px;
+    margin-right: 5px;
+    margin-top: 5px;
+  }
+}
 
 .uk-button-text {
   padding: 0;

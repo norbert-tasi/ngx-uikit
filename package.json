@@ -14,7 +14,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "hmr": "ng serve --hmr -e=hmr",
+    "hmr": "ng serve --hmr -e=hmr --port=4201",
     "packagr": "ng-packagr -p ng-package.json"
   },
   "private": false,
