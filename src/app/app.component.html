@@ -1,4 +1,3 @@
-<ui-checkbox label="Checkbox"></ui-checkbox>
 <ui-delete-button label="Delete"></ui-delete-button>
 <ui-loadbar></ui-loadbar>
 <ui-save-button label="Save"></ui-save-button>
@@ -15,4 +14,10 @@
   <span uk-icon="icon: check"></span>error kiscica def ghost</button>
 <button uiButton="default">kiscica def no ghost</button>
 <button uiButton="danger" ghost>kiscica danger ghost</button>
-<ui-select-button [options]="[{value:'MALE', label:'male'}, {value:'FEMALE', label:'Female'}]"></ui-select-button>
+<form [formGroup]="form">
+  <ui-select-button formControlName="gender" [options]="[{value:'MALE', label:'male'}, {value:'FEMALE', label:'Female'}]"></ui-select-button>
+  <ui-checkbox formControlName="readability" label="Checkbox"></ui-checkbox>
+  <ui-editor formControlName="text"></ui-editor>
+  <ui-editor formControlName="text2" resultFormat="wysiwyg"></ui-editor>
+</form>
+{{form.value | json}}

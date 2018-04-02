@@ -10,6 +10,9 @@ import { LoadbarModule } from './modules/loadbar/loadbar.module';
 import { SaveButtonModule } from './modules/save-button/save-button.module';
 import { SelectButtonModule } from './modules/select-button/select-button.module';
 import { ButtonModule } from './modules/button/button.module';
+import { EditorModule } from './modules/editor/editor.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
     declarations: [
@@ -21,6 +24,9 @@ import { ButtonModule } from './modules/button/button.module';
         CheckboxModule,
         CloseButtonModule,
         DeleteButtonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        EditorModule,
         LoadbarModule,
         SaveButtonModule,
         SelectButtonModule

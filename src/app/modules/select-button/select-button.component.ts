@@ -16,7 +16,8 @@ export interface SelectItem {
 @Component({
     selector: 'ui-select-button',
     templateUrl: './select-button.component.html',
-    styleUrls: ['./select-button.component.scss']
+    styleUrls: ['./select-button.component.scss'],
+    providers: [SELECTBUTTON_VALUE_ACCESSOR]
 })
 export class SelectButtonComponent implements ControlValueAccessor {
 

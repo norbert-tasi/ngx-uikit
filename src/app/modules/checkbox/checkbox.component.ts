@@ -19,7 +19,6 @@ export class CheckboxComponent implements ControlValueAccessor {
     @Input() value: any;
     @Input() name: string;
     @Input() disabled: boolean;
-    @Input() binary: string;
     @Input() label: string;
     @Input() tabindex: number;
     @Input() inputId: string;
@@ -54,22 +53,7 @@ export class CheckboxComponent implements ControlValueAccessor {
     }
 
     updateModel() {
-        if (!this.binary) {
-            if (this.checked) {
-                this.addValue();
-            } else {
-                this.removeValue();
-            }
-
-            this.onModelChange(this.model);
-
-            if (this.formControl) {
-                this.formControl.setValue(this.model);
-            }
-        } else {
-            this.onModelChange(this.checked);
-        }
-
+        this.onModelChange(this.checked);
         this.change.emit(this.checked);
     }
 
@@ -79,23 +63,7 @@ export class CheckboxComponent implements ControlValueAccessor {
     }
 
     isChecked(): boolean {
-        if (this.binary) {
-            return this.model;
-        } else {
-            return this.model && this.model.indexOf(this.value) > -1;
-        }
-    }
-
-    removeValue() {
-        this.model = this.model.filter(val => val !== this.value);
-    }
-
-    addValue() {
-        if (this.model) {
-            this.model = [...this.model, this.value];
-        } else {
-            this.model = [this.value];
-        }
+        return this.model;
     }
 
     onFocus(event) {
